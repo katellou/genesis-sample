@@ -1042,6 +1042,10 @@ img.alignright,
 
 .site-header {
 	background-color:#86BCFF;
+	background: -webkit-linear-gradient(-90deg, #A8CFFF, #62A9FF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(-90deg, #A8CFFF, #62A9FF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(-90deg, #A8CFFF, #62A9FF); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(-90deg, #A8CFFF, #62A9FF); /* Standard syntax */
 }
 
 .site-header > .wrap {
