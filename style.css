@@ -1071,14 +1071,15 @@ img.alignright,
 .site-title {
 	font-size: 30px;
 	font-size: 3rem;
-	font-weight: 700;
+	font-weight: 500;
 	line-height: 1.2;
+	font-family: 'Lato', sans-serif;
 }
 
 .site-title a,
 .site-title a:focus,
 .site-title a:hover {
-	color: #333;
+	color: #fff;
 	text-decoration: none;
 }
 
