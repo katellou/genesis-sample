@@ -159,7 +159,7 @@ body > div {
 body {
 	background-color: #eee;
 	color: #333;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Cormorant Garamond', sans-serif;
 	font-size: 20px;
 	font-size: 2rem;
 	-webkit-font-smoothing: antialiased;
@@ -260,8 +260,8 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: 600;
+	font-family: 'Lato', sans-serif;
+	font-weight: 500;
 	line-height: 1.2;
 	margin: 0 0 10px;
 }
@@ -1259,7 +1259,7 @@ img.alignright,
 .entry {
 	background-color: #fff;
 	margin-bottom: 40px;
-	padding: 70px 80px;
+	padding: 0;
 }
 
 .entry-content ol,

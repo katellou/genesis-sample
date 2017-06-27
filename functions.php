@@ -149,3 +149,14 @@ function genesis_sample_comments_gravatar( $args ) {
 	return $args;
 
 }
+
+//* Enqueue Lato Google font
+add_action( 'wp_enqueue_scripts', 'sp_load_google_lato_font');
+function sp_load_google_lato_font() {
+	wp_enqueue_style( 'google-font-lato', '//fonts.googleapis.com/css?family=Lato:300,500,700', array(), CHILD_THEME_VERSION );
+}
+
+add_action( 'wp_enqueue_scripts', 'sp_load_google_corgar_font');
+function sp_load_google_corgar_font() {
+	wp_enqueue_style( 'genesis-font-cormorant-garamond', '//fonts.googleapis.com/css?family=Cormorant+Garamond:300,500,700', array(), CHILD_THEME_VERSION );
+}
