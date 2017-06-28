@@ -163,6 +163,11 @@ function sp_load_pt_serif_font() {
 	wp_enqueue_style( 'genesis-font-pt-serif', '//fonts.googleapis.com/css?family=PT+Serif:400', array(), CHILD_THEME_VERSION );
 }
 
+add_action( 'wp_enqueue_scripts', 'sp_load_corgar_font');
+function sp_load_corgar_font() {
+	wp_enqueue_style( 'genesis-font-corgar-serif', '//fonts.googleapis.com/css?family=Cormorant+Garamond:400', array(), CHILD_THEME_VERSION );
+}
+
 // Layout
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
