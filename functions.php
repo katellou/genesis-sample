@@ -150,13 +150,31 @@ function genesis_sample_comments_gravatar( $args ) {
 
 }
 
-//* Enqueue Lato Google font
+// Customizations ----------
+
+// Fonts
 add_action( 'wp_enqueue_scripts', 'sp_load_google_lato_font');
 function sp_load_google_lato_font() {
 	wp_enqueue_style( 'google-font-lato', '//fonts.googleapis.com/css?family=Lato:300,500,700', array(), CHILD_THEME_VERSION );
 }
 
-add_action( 'wp_enqueue_scripts', 'sp_load_google_corgar_font');
-function sp_load_google_corgar_font() {
-	wp_enqueue_style( 'genesis-font-cormorant-garamond', '//fonts.googleapis.com/css?family=Cormorant+Garamond:300,500,700', array(), CHILD_THEME_VERSION );
+add_action( 'wp_enqueue_scripts', 'sp_load_pt_serif_font');
+function sp_load_pt_serif_font() {
+	wp_enqueue_style( 'genesis-font-pt-serif', '//fonts.googleapis.com/css?family=PT+Serif:400', array(), CHILD_THEME_VERSION );
+}
+
+// Layout
+add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+
+// Title
+remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
+add_action( 'genesis_site_title', 'child_seo_site_title' );
+function child_seo_site_title() { 
+	echo '<h1 class="site-title">What I Read</h1>';
+}
+
+remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
+add_action( 'genesis_site_description', 'child_seo_site_description' );
+function child_seo_site_description() { 
+	echo '<p class="site-description" itemprop="description">Katell Le Goulven</p>';
 }
