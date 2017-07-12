@@ -90,6 +90,7 @@ input[type="search"] {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing:    border-box;
 	box-sizing:         border-box;
+	border-radius: 7px;
 }
 
 *,
@@ -158,7 +159,7 @@ body > div {
 
 body {
 	background-color: #fff;
-	font-family: 'Cormorant Garamond', sans-serif;
+	font-family: 'Hind', sans-serif;
 	font-size: 18px;
 	-webkit-font-smoothing: antialiased;
 	font-weight: 400;
@@ -251,6 +252,10 @@ blockquote::before {
 	top: -10px;
 }
 
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* Firefox 18- */
+input:focus::-moz-placeholder { color:transparent; } /* Firefox 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* oldIE 😉 */
 
 /* ## Headings
 --------------------------------------------- */
@@ -398,9 +403,9 @@ textarea {
 	border: 1px solid #ddd;
 	color: #333;
 	font-size: 18px;
-	font-size: 1.8rem;
+	font-size: 1.4rem;
 	font-weight: 400;
-	padding: 16px;
+	padding: 6px;
 	width: 100%;
 }
 
@@ -556,7 +561,6 @@ th:first-child {
 	color: #333;
 	display: block;
 	font-size: 1em;
-	font-weight: bold;
 	height: auto;
 	padding: 15px 23px 14px;
 	text-decoration: none;
@@ -756,7 +760,7 @@ th:first-child {
 	font-size: 18px;
 	font-size: 1.8rem;
 	margin-bottom: 40px;
-	padding: 60px;
+	padding: 10px;
 }
 
 .archive-description p:last-child,
@@ -774,15 +778,18 @@ th:first-child {
 .entry-content .search-form,
 .site-header .search-form {
 	margin-bottom: 40px;
-	width: 50%;
+	width: 100%;
+	padding-left: 30px
 }
 
 .site-header .search-form {
 	float: right;
-	margin: 12px auto 0;
+	margin: 18px auto 0;
 }
 
 .post-password-form input[type="submit"],
+
+
 .search-form input[type="submit"] {
 	margin-top: 10px;
 }
@@ -806,6 +813,7 @@ th:first-child {
 .author-box-title {
 	font-size: 20px;
 	font-size: 2rem;
+	font-weight: 600;
 }
 
 .entry-title {
@@ -1074,8 +1082,8 @@ img.alignright,
 }
 
 .site-title {
-	font-size: 30px;
-	font-size: 3rem;
+	font-size: 35px;
+	font-size: 4rem;
 	font-weight: 500;
 	line-height: 1.2;
 	font-family: 'Lato', sans-serif;
@@ -1098,8 +1106,8 @@ img.alignright,
 }
 
 .site-description {
-	font-size: 16px;
-	font-size: 1.6rem;
+	font-size: 25px;
+	font-size: 2.5rem;
 	font-weight: 400;
 	line-height: 1.5;
 }
@@ -1132,9 +1140,10 @@ img.alignright,
 	clear: both;
 	font-size: 16px;
 	font-size: 1.6rem;
-	font-weight: 600;
+	font-weight: 500;
 	line-height: 1;
 	width: 100%;
+	text-transform: uppercase;
 }
 
 .genesis-nav-menu .menu-item {
@@ -1145,7 +1154,7 @@ img.alignright,
 }
 
 .genesis-nav-menu a {
-	color: #333;
+	color: #384148;
 	display: block;
 	padding: 32px 20px;
 	text-decoration: none;
@@ -1156,8 +1165,9 @@ img.alignright,
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover  {
-	color: #c3251d;
-	text-decoration: underline;
+	color: #808080;
+	text-decoration: none;
+	
 }
 
 .genesis-nav-menu .sub-menu {
@@ -1256,6 +1266,14 @@ img.alignright,
 	padding: 0 20px 10px;
 }
 
+.site-footer.custom-footer {
+	font-size: 18px
+}
+
+.linkedin {
+	color : #326891;
+	font-weight: bold;
+}
 
 /* # Content Area
 ---------------------------------------------------------------------------------------------------- */

@@ -155,7 +155,7 @@ function genesis_sample_comments_gravatar( $args ) {
 // Fonts
 add_action( 'wp_enqueue_scripts', 'sp_load_google_lato_font');
 function sp_load_google_lato_font() {
-	wp_enqueue_style( 'google-font-lato', '//fonts.googleapis.com/css?family=Lato:300,500,700', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'google-font-lato', '//fonts.googleapis.com/css?family=Lato:300,500,600,700', array(), CHILD_THEME_VERSION );
 }
 
 add_action( 'wp_enqueue_scripts', 'sp_load_pt_serif_font');
@@ -163,9 +163,9 @@ function sp_load_pt_serif_font() {
 	wp_enqueue_style( 'genesis-font-pt-serif', '//fonts.googleapis.com/css?family=PT+Serif:400', array(), CHILD_THEME_VERSION );
 }
 
-add_action( 'wp_enqueue_scripts', 'sp_load_corgar_font');
-function sp_load_corgar_font() {
-	wp_enqueue_style( 'genesis-font-corgar-serif', '//fonts.googleapis.com/css?family=Cormorant+Garamond:400', array(), CHILD_THEME_VERSION );
+add_action( 'wp_enqueue_scripts', 'sp_load_hind_font');
+function sp_load_hind_font() {
+	wp_enqueue_style( 'genesis-font-hind-serif', '//fonts.googleapis.com/css?family=Hind:400,500,600,700', array(), CHILD_THEME_VERSION );
 }
 
 // Layout
@@ -181,5 +181,72 @@ function child_seo_site_title() {
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 add_action( 'genesis_site_description', 'child_seo_site_description' );
 function child_seo_site_description() { 
-	echo '<p class="site-description" itemprop="description">Katell Le Goulven</p>';
+	echo '<h2 class="site-description" itemprop="description">Katell Le Goulven</h2>';
+}
+
+add_filter( 'wp_nav_menu_items', 'theme_menu_extras', 10, 2 );
+/**
+ * Filter menu items, appending either a search form or today's date.
+ *
+ * @param string   $menu HTML string of list items.
+ * @param stdClass $args Menu arguments.
+ *
+ * @return string Amended HTML string of list items.
+ */
+function theme_menu_extras( $menu, $args ) {
+	//* Change 'primary' to 'secondary' to add extras to the secondary navigation menu
+	//if ( 'secondary' !== $args->theme_location )
+    //		return $menu;
+	//* Uncomment this block to add a search form to the navigation menu
+	ob_start();
+	get_search_form();
+	$search = ob_get_clean();
+	$menu  .= '<li class="right search">' . $search . '</li>';
+	//* Uncomment this block to add the date to the navigation menu
+	/*
+	$menu .= '<li class="right date">' . date_i18n( get_option( 'date_format' ) ) . '</li>';
+	*/
+	return $menu;
+}
+
+//* Add Dashicon to search form button 
+add_filter( 'genesis_search_button_text', 'b3m_search_button_dashicon' );
+function b3m_search_button_dashicon( $text ) {
+	return esc_attr( '&#xf179;' );
+}
+
+//* Customize search form input box text
+add_filter( 'genesis_search_text', 'sp_search_text' );
+function sp_search_text( $text ) {
+	return esc_attr( 'Search' );
+}
+
+//* Remove page title for multiple pages (requires HTML5 theme support)
+//* Change '3645' and '4953' to match your needs
+add_action( 'get_header', 'child_remove_page_titles' );
+function child_remove_page_titles() {
+    $pages = array( 2,122 );
+    if ( is_page( $pages ) ) {
+        remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+    }
+}
+
+/** Exclude page from search results */
+add_filter('pre_get_posts','SearchFilter');
+function SearchFilter($query) {
+    if ($query->is_search) {
+        $query->set('post__not_in', array(2, 122));
+    }
+    return $query;
+}
+
+//* Remove the site footer
+remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
+remove_action( 'genesis_footer', 'genesis_do_footer' );
+remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
+
+//* Customize the site footer
+add_action( 'genesis_footer', 'bg_custom_footer' );
+function bg_custom_footer() { 
+	echo '<div class="site-footer custom-footer"><p>Find me on <a class="linkedin" href="https://www.linkedin.com/in/katelllegoulven/">Linked In</a></p></div>';
 }
