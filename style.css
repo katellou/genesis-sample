@@ -154,13 +154,14 @@ html {
 /* Chrome fix */
 body > div {
 	font-size: 18px;
-	font-size: 1.8rem;
+	font-size: 1.9rem;
 }
 
 body {
 	background-color: #fff;
 	font-family: 'Hind', sans-serif;
 	font-size: 18px;
+	font-size: 1.9rem;
 	-webkit-font-smoothing: antialiased;
 	font-weight: 400;
 	line-height: 1.5;
@@ -583,7 +584,7 @@ th:first-child {
 .site-inner,
 .wrap {
 	margin: 0 auto;
-	max-width: 1280px;
+	max-width: 1200px;
 }
 
 .site-inner {
@@ -593,7 +594,7 @@ th:first-child {
 }
 
 .landing-page .site-inner {
-	max-width: 800px;
+	max-width: 1200px;
 }
 
 /* ## Column Widths and Positions
@@ -620,7 +621,7 @@ th:first-child {
 
 .content {
 	float: right;
-	width: 880px;
+	width: 800px;
 }
 
 .content-sidebar .content,
@@ -638,6 +639,8 @@ th:first-child {
 .full-width-content .content {
 	width: 100%;
 }
+
+
 
 /* ### Primary Sidebar */
 
@@ -785,7 +788,7 @@ th:first-child {
 
 .site-header .search-form {
 	float: right;
-	margin: 18px auto 0;
+	margin: 16px auto 0;
 }
 
 .post-password-form input[type="submit"],
@@ -1050,12 +1053,21 @@ img.alignright,
 /* # Site Header
 ---------------------------------------------------------------------------------------------------- */
 
+
+@media DISABLED {
 .site-header {
 	background-color:#86BCFF;
 	background: -webkit-linear-gradient(-90deg, #A8CFFF, #62A9FF); /* For Safari 5.1 to 6.0 */
 	background: -o-linear-gradient(-90deg, #A8CFFF, #62A9FF); /* For Opera 11.1 to 12.0 */
 	background: -moz-linear-gradient(-90deg, #A8CFFF, #62A9FF); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(-90deg, #A8CFFF, #62A9FF); /* Standard syntax */
+	min-height: 160px;
+}
+}
+
+.site-header {
+	min-height: 160px;
+	border-bottom: 1px solid #D3D3D3;
 }
 
 .site-header > .wrap {
@@ -1084,11 +1096,13 @@ img.alignright,
 
 .site-title {
 	font-size: 35px;
-	font-size: 4rem;
+	font-size: 8rem;
 	font-weight: 500;
 	line-height: 1.2;
 	font-family: 'Lato', sans-serif;
-	color:#fff
+	color:#4c4c4c;
+	margin-top:20px;
+	min-width: 500px;
 }
 
 .site-title a,
@@ -1145,6 +1159,7 @@ img.alignright,
 	line-height: 1;
 	width: 100%;
 	text-transform: uppercase;
+	margin-top: 52px;
 }
 
 .genesis-nav-menu .menu-item {
@@ -1241,6 +1256,22 @@ img.alignright,
 	visibility: hidden;
 }
 
+.menu .search input[type="submit"],
+.widget_search input[type="submit"] {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.menu a {
+	color: #384148;
+	text-decoration: none;
+}
+
 /* ## Site Header Navigation
 --------------------------------------------- */
 
@@ -1326,7 +1357,7 @@ p.entry-meta {
 }
 
 .entry-footer .entry-meta {
-	border-top: 1px solid #eee;
+	border-top: 1px solid #D3D3D3;
 	padding-top: 24px;
 }
 
@@ -1776,6 +1807,12 @@ p.entry-meta {
 
 @media only screen and (max-width: 860px) {
 
+	.site-title {
+		font-size: 25px;
+		font-size: 6rem;
+		min-width: 300px;
+	}
+
 	body,
 	body > div {
 		font-size: 18px;
@@ -1829,7 +1866,7 @@ p.entry-meta {
 		margin: 0;
 		width: 100%;
 	}
-
+	
 }
 
 
