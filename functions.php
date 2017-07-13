@@ -169,7 +169,7 @@ function sp_load_hind_font() {
 }
 
 // Layout
-add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+//add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
 // Title
 remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
@@ -179,10 +179,12 @@ function child_seo_site_title() {
 }
 
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
+/*
 add_action( 'genesis_site_description', 'child_seo_site_description' );
 function child_seo_site_description() { 
 	echo '<h2 class="site-description" itemprop="description">Katell Le Goulven</h2>';
 }
+*/
 
 add_filter( 'wp_nav_menu_items', 'theme_menu_extras', 10, 2 );
 /**
@@ -225,7 +227,7 @@ function sp_search_text( $text ) {
 //* Change '3645' and '4953' to match your needs
 add_action( 'get_header', 'child_remove_page_titles' );
 function child_remove_page_titles() {
-    $pages = array( 2,122 );
+    $pages = array( 2,122,132 );
     if ( is_page( $pages ) ) {
         remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
     }
@@ -235,7 +237,7 @@ function child_remove_page_titles() {
 add_filter('pre_get_posts','SearchFilter');
 function SearchFilter($query) {
     if ($query->is_search) {
-        $query->set('post__not_in', array(2, 122));
+        $query->set('post__not_in', array(2, 122, 132));
     }
     return $query;
 }

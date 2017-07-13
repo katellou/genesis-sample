@@ -153,8 +153,8 @@ html {
 
 /* Chrome fix */
 body > div {
-	font-size: 20px;
-	font-size: 2rem;
+	font-size: 18px;
+	font-size: 1.8rem;
 }
 
 body {
@@ -163,7 +163,7 @@ body {
 	font-size: 18px;
 	-webkit-font-smoothing: antialiased;
 	font-weight: 400;
-	line-height: 1.6;
+	line-height: 1.5;
     color: #4c4c4c;
 	margin: 0;
 	font-style: normal;
@@ -403,9 +403,9 @@ textarea {
 	border: 1px solid #ddd;
 	color: #333;
 	font-size: 18px;
-	font-size: 1.4rem;
+	font-size: 1.6rem;
 	font-weight: 400;
-	padding: 6px;
+	padding: 8px 6px 6px 6px;
 	width: 100%;
 }
 
@@ -437,6 +437,7 @@ input[type="submit"],
 .button {
 	background-color: #333;
 	border: 0;
+	border-radius: 7px;
 	color: #fff;
 	cursor: pointer;
 	font-size: 16px;
@@ -779,7 +780,7 @@ th:first-child {
 .site-header .search-form {
 	margin-bottom: 40px;
 	width: 100%;
-	padding-left: 30px
+	padding-left: 15px
 }
 
 .site-header .search-form {
@@ -1760,6 +1761,10 @@ p.entry-meta {
 
 	.genesis-responsive-menu .genesis-nav-menu .sub-menu .sub-menu {
 		margin: 0;
+	}
+
+	.genesis-responsive-menu > .genesis-nav-menu > .right {
+		float: left;
 	}
 
 	.footer-widgets-1,
