@@ -90,7 +90,7 @@ input[type="search"] {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing:    border-box;
 	box-sizing:         border-box;
-	border-radius: 7px;
+	border-radius: 10px;
 }
 
 *,
@@ -438,7 +438,7 @@ input[type="submit"],
 .button {
 	background-color: #333;
 	border: 0;
-	border-radius: 7px;
+	border-radius: 3px;
 	color: #fff;
 	cursor: pointer;
 	font-size: 16px;
@@ -584,7 +584,7 @@ th:first-child {
 .site-inner,
 .wrap {
 	margin: 0 auto;
-	max-width: 1200px;
+	max-width: 1280px;
 }
 
 .site-inner {
@@ -594,7 +594,7 @@ th:first-child {
 }
 
 .landing-page .site-inner {
-	max-width: 1200px;
+	max-width: 800px;
 }
 
 /* ## Column Widths and Positions
@@ -638,6 +638,10 @@ th:first-child {
 
 .full-width-content .content {
 	width: 100%;
+}
+
+.full-width-content .content .post {
+	max-width: 900px;
 }
 
 
@@ -823,6 +827,7 @@ th:first-child {
 .entry-title {
 	font-size: 36px;
 	font-size: 3.6rem;
+	font-weight: bold;
 }
 
 .entry-title a,

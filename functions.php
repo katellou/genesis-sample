@@ -150,7 +150,7 @@ function genesis_sample_comments_gravatar( $args ) {
 
 }
 
-// Customizations ----------
+// Customizations --------------------------------------------------------------------------------
 
 // Fonts
 add_action( 'wp_enqueue_scripts', 'sp_load_google_lato_font');
@@ -251,4 +251,13 @@ remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 add_action( 'genesis_footer', 'bg_custom_footer' );
 function bg_custom_footer() { 
 	echo '<div class="site-footer custom-footer"><p>Find me on <a class="linkedin" href="https://www.linkedin.com/in/katelllegoulven/">Linked In</a></p></div>';
+}
+
+/** Customise the post info info function */
+add_filter( 'genesis_post_info', 'genesischild_post_info' );
+function genesischild_post_info($post_info) {
+	if (!is_page()) {
+ 		$post_info = 'Posted on [post_date] [post_comments] [post_edit]';
+ 		return $post_info;
+	}
 }
