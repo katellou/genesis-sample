@@ -154,21 +154,21 @@ html {
 /* Chrome fix */
 body > div {
 	font-size: 18px;
-	font-size: 1.9rem;
+	font-size: 2.0rem;
 }
 
 body {
 	background-color: #fff;
 	font-family: 'Hind', sans-serif;
 	font-size: 18px;
-	font-size: 1.9rem;
+	font-size: 2.0rem;
 	-webkit-font-smoothing: antialiased;
 	font-weight: 400;
-	line-height: 1.5;
-    color: #4c4c4c;
+	line-height: 1.666667;
+    color: #262626;
 	margin: 0;
 	font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 a,
@@ -641,7 +641,7 @@ th:first-child {
 }
 
 .full-width-content .content .post {
-	max-width: 900px;
+	max-width: 1000px;
 }
 
 
@@ -1105,7 +1105,7 @@ img.alignright,
 	font-weight: 500;
 	line-height: 1.2;
 	font-family: 'Lato', sans-serif;
-	color:#4c4c4c;
+	color:#262626;
 	margin-top:20px;
 	min-width: 500px;
 }
@@ -1186,7 +1186,7 @@ img.alignright,
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover  {
-	color: #808080;
+	color: #262626;
 	text-decoration: none;
 	
 }
@@ -1273,7 +1273,7 @@ img.alignright,
 }
 
 .menu a {
-	color: #384148;
+	color: #262626;
 	text-decoration: none;
 }
 

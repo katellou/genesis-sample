@@ -165,7 +165,7 @@ function sp_load_pt_serif_font() {
 
 add_action( 'wp_enqueue_scripts', 'sp_load_hind_font');
 function sp_load_hind_font() {
-	wp_enqueue_style( 'genesis-font-hind-serif', '//fonts.googleapis.com/css?family=Hind:400,500,600,700', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'genesis-font-hind-serif', '//fonts.googleapis.com/css?family=Hind:300,400,500,600,700', array(), CHILD_THEME_VERSION );
 }
 
 // Layout
